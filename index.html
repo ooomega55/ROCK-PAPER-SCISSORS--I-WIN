@@ -26,17 +26,17 @@
       </div>
 
       <div class="col" id="playerchoice">
-        <button id="rpsoption" class="btn edit"><img src="rock.jpg" class="img-fluid" alt="therock"
+        <button id="rpsoption" onClick="playGame('rock')" class="btn edit"><img src="rock.jpg" class="img-fluid" alt="the-rock"
             width="385px">Rock</button>
-        <button id="rpsoptiontwo" class="btn edit"><img src="paper.jpg" class="img-fluid" alt="toiletpaper"
+        <button id="rpsoptiontwo"  onClick="playGame('paper')" class="btn edit"><img src="paper.jpg" class="img-fluid" alt="toilet-paper"
             width="203px">Paper</button>
-        <button id="rpsoptionthree" class="btn edit"><img src="scissors.jpg" alt="cutgrass" class="img-fluid"
+        <button id="rpsoptionthree"  onClick="playGame('scissors')" class="btn edit"><img src="scissors.jpg" alt="cut-grass" class="img-fluid"
             width="300px">Scissors</button>
       </div>
 
 
 
-      <div class="row rpsresult">
+      <div class="row result">
         <!--Result-->
         <div class="playerscore">
           <div class="pcount">Player: <h1 id="playerScoreText">0</h1></div>
@@ -44,9 +44,6 @@
         <div class="compscore">
           <div class="ccount">Computer: <h1 id="compScoreText">0</h1></div>
           <!--Computer score-->
-          <div id="rpsResultText">
-            <!--Comment on who won-->
-          </div>
 
         </div>
       </div>
@@ -65,7 +62,7 @@
     </div>
 
   </div>
-  <script src="/script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

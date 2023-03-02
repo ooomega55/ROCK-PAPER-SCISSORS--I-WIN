@@ -62,16 +62,16 @@ function determineWinner() {
 //};
 
 
-//const playGame = (choice) => {
-  //const playerChoice = getPlayerChoice(choice);
-  //const computerChoice = getComputerChoice();
-  //document.getElementById(playerchoice);
-  //console.log("You threw: " + userChoice);
-  //console.log("The computer threw:" + computerChoice);
-  //console.log(determineWinner(userChoice, computerChoice));
-  //document.getElementById('rock');
-  //document.getElementById('paper');
-  //document.getElementById('scissors');
+const playGame = (choice) => {
+const playerChoice = getPlayerChoice(choice);
+const computerChoice = getComputerChoice();
+ document.getElementById(playerchoice);
+ console.log("You threw: " + userChoice);
+ console.log("The computer threw:" + computerChoice);
+ console.log(determineWinner(userChoice, computerChoice));
+document.getElementById('rock');
+ document.getElementById('paper');
+document.getElementById('scissors');
 //};
 
-
+playGame();
