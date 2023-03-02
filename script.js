@@ -1,14 +1,16 @@
 const playerScoreText = document.querySelector('#playerScoreText');
-const compScoreText = document.querySelector('compScoreText');
+const compScoreText = document.querySelector('#compScoreText');
 const resultText = document.querySelector('#resultText');
-const rpsoptions = document.querySelectorAll('.rpsoptions');
+const rpsoption = document.querySelectorAll('#rpsoption');
+const rpsoptiontwo = document.querySelectorAll('#rpsoptiontwo');
+const rpsoptionthree = document.querySelectorAll('#rpsoptionthree');
 
 let player;
 let computer;
 let result;
 
-rpsoptions.forEach(button => button.addEventListener('click', () => {
-  player = button.textContent
+rpsoption.forEach(button => button.addEventListener('click', () => {
+  player = button.textContent;
   getComputerChoice();
   playerScoreText.textContent = 'Player: ${player}';
   compScoreText.textContent = 'Computer: ${computer}';
