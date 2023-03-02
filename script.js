@@ -1,68 +1,75 @@
-const getUserChoice = (userInput) => {
-    userInput = userInput.toLowerCase();
-  
-    if (
-      userInput === 'rock' ||
-      userInput === 'paper' ||
-      userInput === 'scissors'
-    ) {
-      return userInput;
-    } else {
-      console.log("Error! Type rock, paper, or scissors.");
-    }
-  };
-  
-  const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * 3);
-    switch (randomNumber) {
-      case 0:
-        return 'rock';
-      case 1:
-        return 'paper';
-      case 2:
-        return 'scissors';
-    }
-  };
-  
-  const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === computerChoice) {
-      return "The game is a tie!";
-    }
-  
-    if (userChoice === 'rock') {
-      if (computerChoice === 'paper') {
-        return "You suck";
-      } else {
-        return "Nice, you won!";
-      }
-    }
-  
-    if (userChoice === 'paper') {
-      if (computerChoice === 'scissors') {
-        return "You suck";
-      } else {
-        return "Nice, you won!";
-      }
-    }
-  
-    if (userChoice === 'scissors') {
-      if (computerChoice === 'rock') {
-        return "You suck";
-      } else {
-        return "Nice, you won!";
-      }
-    }
-  };
+const playerScoreText = document.querySelector('#playerScoreText');
+const compScoreText = document.querySelector('compScoreText');
+const resultText = document.querySelector('#resultText');
+const rpsoptions = document.querySelectorAll('.rpsoptions');
 
-  const playGame = (choice) => {
-    const userChoice = getUserChoice(choice);
-    const computerChoice = getComputerChoice();
-    document.getElementById(playerchoice);
-    //console.log("You threw: " + userChoice);
-    //console.log("The computer threw:" + computerChoice);
-    //console.log(determineWinner(userChoice, computerChoice));
-    document.getElementById('rock');
-    document.getElementById('paper');
-    document.getElementById('scissors');
-  };
+let player;
+let computer;
+let result;
+
+rpsoptions.forEach(button => button.addEventListener('click', () => {
+  player = button.textContent
+  getComputerChoice();
+  playerScoreText.textContent = 'Player: ${player}';
+  compScoreText.textContent = 'Computer: ${computer}';
+  resultText.textContent = determineWinner();
+}));
+
+
+
+function getComputerChoice() {
+  const randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber) {
+    case 0:
+      computer = 'rock';
+    case 1:
+      computer =  'paper';
+    case 2:
+      computer =  'scissors';
+  }
+};
+
+
+function determineWinner() {
+  if (player == computer) {
+    return "The game is a tie!";
+  }
+  else if (computer == 'rock') {
+      return (player == 'paper') ? "You suck" : "Nice, you won!"
+  }
+  else if (computer == 'paper') {
+      return (player == 'scissors') ? "You suck" : "Nice, you won!"
+  }
+  else if (computer == 'scissors') {
+      return (player == 'rock') ? "You suck" : "Nice, you won!"
+    }
+} 
+
+//const getPlayerChoice = (playerInput) => {
+ // playerInput = playerInput.toLowerCase();
+
+ // if (
+   // playerInput === 'rock' ||
+  //  playerInput === 'paper' ||
+//playerInput === 'scissors'
+ // ) {
+ //   return playerInput;
+//  } else {
+ //   console.log("Error! Type rock, paper, or scissors.");
+//  }
+//};
+
+
+//const playGame = (choice) => {
+  //const playerChoice = getPlayerChoice(choice);
+  //const computerChoice = getComputerChoice();
+  //document.getElementById(playerchoice);
+  //console.log("You threw: " + userChoice);
+  //console.log("The computer threw:" + computerChoice);
+  //console.log(determineWinner(userChoice, computerChoice));
+  //document.getElementById('rock');
+  //document.getElementById('paper');
+  //document.getElementById('scissors');
+//};
+
 
