@@ -1,17 +1,17 @@
-const playerScoreText = document.querySelector('#playerScoreText');
-const compScoreText = document.querySelector('compScoreText');
+const playerText = document.querySelector('#playerText');
+const computerText = document.querySelector('#computerText');
 const resultText = document.querySelector('#resultText');
-const rpsoptions = document.querySelectorAll('.rpsoptions');
+const rpsoption = document.querySelectorAll('.rpsoption');
 
 let player;
 let computer;
 let result;
 
-rpsoptions.forEach(button => button.addEventListener('click', () => {
-  player = button.textContent
+rpsoption.forEach(button => button.addEventListener('click', () => {
+  player = button.textContent;
   getComputerChoice();
-  playerScoreText.textContent = 'Player: ${player}';
-  compScoreText.textContent = 'Computer: ${computer}';
+  playerText.textContent = `Player: ${player}`;
+  computerText.textContent = `Computer: ${computer}`;
   resultText.textContent = determineWinner();
 }));
 
@@ -22,54 +22,70 @@ function getComputerChoice() {
   switch (randomNumber) {
     case 0:
       computer = 'rock';
+      break;
     case 1:
-      computer =  'paper';
+      computer = 'paper';
+      break;
     case 2:
-      computer =  'scissors';
+      computer = 'scissors';
+      break;
   }
 };
 
 
 function determineWinner() {
-  if (player == computer) {
+  if (player === computer) {
     return "The game is a tie!";
   }
-  else if (computer == 'rock') {
-      return (player == 'paper') ? "You suck" : "Nice, you won!"
+  else if (computer === 'rock') {
+    return (player === 'paper') ? "Nice, you won!" : "You suck"
   }
-  else if (computer == 'paper') {
-      return (player == 'scissors') ? "You suck" : "Nice, you won!"
+  else if (computer === 'paper') {
+    return (player === 'scissors') ? "You suck" : "Nice, you won!"
   }
-  else if (computer == 'scissors') {
-      return (player == 'rock') ? "You suck" : "Nice, you won!"
-    }
-} 
+  else if (computer === 'scissors') {
+    return (player === 'rock') ? "Nice, you won!" : "Nice, you won!"
+  }
+  else if (computer === 'rock') {
+    return (player === 'scissors') ? "You suck" : "Nice, you won!"
+  }
+  else if (computer === 'paper') {
+    return (player === 'rock') ? "You suck" : "Nice, you won!"
+  }
+  else if (computer === 'scissors') {
+    return (player === 'paper') ? "Nice, you won!" : "You suck"
+  }
+}
+
+function playGame() {
+
+}
 
 //const getPlayerChoice = (playerInput) => {
- // playerInput = playerInput.toLowerCase();
+  //playerInput = playerInput.toLowerCase();
 
  // if (
    // playerInput === 'rock' ||
-  //  playerInput === 'paper' ||
-//playerInput === 'scissors'
+   // playerInput === 'paper' ||
+   // playerInput === 'scissors'
  // ) {
- //   return playerInput;
-//  } else {
- //   console.log("Error! Type rock, paper, or scissors.");
-//  }
+   // return playerInput;
+  //} else {
+   // console.log("Error! Type rock, paper, or scissors.");
+  //}
 //};
+
 
 
 //const playGame = (choice) => {
-  //const playerChoice = getPlayerChoice(choice);
-  //const computerChoice = getComputerChoice();
-  //document.getElementById(playerchoice);
-  //console.log("You threw: " + userChoice);
-  //console.log("The computer threw:" + computerChoice);
-  //console.log(determineWinner(userChoice, computerChoice));
-  //document.getElementById('rock');
-  //document.getElementById('paper');
-  //document.getElementById('scissors');
+//const playerChoice = getPlayerChoice(choice);
+//const computerChoice = getComputerChoice();
+// document.getElementById(playerchoice);
+ //console.log("You threw: " + userChoice);
+ //console.log("The computer threw:" + computerChoice);
+ //console.log(determineWinner(userChoice, computerChoice));
+//document.getElementById('rock');
+ //document.getElementById('paper');
+//document.getElementById('scissors');
 //};
-
 
