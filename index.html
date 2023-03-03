@@ -20,30 +20,33 @@
     <div class="row">
       <!--Player option-->
       <div id="gameStyle">
-        <div class="extraText">Player: <h1 id="playerText">E</h1></div>
-        <div class="extraText">Computer: <h1 id="computerText">E</h1></div>
-        <div class="extraText">Result: <h1 id="resultText">E</h1></div>
+        <h1 class="extraText" id="playerText">Player: </h1>
+        <h1 class="extraText" id="computerText">Computer: </h1>
+        <h1 class="extraText" id="resultText">Result: </h1>
       </div>
 
       <div class="col" id="playerchoice">
-        <button id="rpsoption" onClick="playGame('rock')" class="btn edit"><img src="rock.jpg" class="img-fluid" alt="the-rock"
+        <button id="rpsoption" class="btn edit"><img src="rock.jpg" class="img-fluid" alt="therock"
             width="385px">Rock</button>
-        <button id="rpsoptiontwo"  onClick="playGame('paper')" class="btn edit"><img src="paper.jpg" class="img-fluid" alt="toilet-paper"
+        <button id="rpsoption" class="btn edit"><img src="paper.jpg" class="img-fluid" alt="toiletpaper"
             width="203px">Paper</button>
-        <button id="rpsoptionthree"  onClick="playGame('scissors')" class="btn edit"><img src="scissors.jpg" alt="cut-grass" class="img-fluid"
+        <button id="rpsoption" class="btn edit"><img src="scissors.jpg" alt="cutgrass" class="img-fluid"
             width="300px">Scissors</button>
       </div>
 
 
 
-      <div class="row result">
+      <div class="row rpsresult">
         <!--Result-->
         <div class="playerscore">
-          <div class="pcount">Player: <h1 id="playerScoreText">0</h1></div>
+          <div class="pcount" id="playerScoreText">Player: 0</div>
         </div>
         <div class="compscore">
-          <div class="ccount">Computer: <h1 id="compScoreText">0</h1></div>
+          <div class="ccount" id="compScoreText">Computer: 0</div>
           <!--Computer score-->
+          <div id="rpsResultText">
+            <!--Comment on who won-->
+          </div>
 
         </div>
       </div>
@@ -62,7 +65,7 @@
     </div>
 
   </div>
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 
 </html>

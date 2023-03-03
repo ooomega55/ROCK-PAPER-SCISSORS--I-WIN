@@ -1,19 +1,17 @@
-const playerText = document.querySelector('#playerText');
-const computerText = document.querySelector('#computerText');
+const playerScoreText = document.querySelector('#playerScoreText');
+const compScoreText = document.querySelector('compScoreText');
 const resultText = document.querySelector('#resultText');
-const rpsoption = document.querySelectorAll('#rpsoption');
-const rpsoptiontwo = document.querySelectorAll('#rpsoptiontwo');
-const rpsoptionthree = document.querySelectorAll('#rpsoptionthree');
+const rpsoptions = document.querySelectorAll('.rpsoptions');
 
 let player;
 let computer;
 let result;
 
-rpsoption.forEach(button => button.addEventListener('click', () => {
-  player = button.textContent;
+rpsoptions.forEach(button => button.addEventListener('click', () => {
+  player = button.textContent
   getComputerChoice();
-  playerText.textContent = player;
-  computerText.textContent = computer;
+  playerScoreText.textContent = 'Player: ${player}';
+  compScoreText.textContent = 'Computer: ${computer}';
   resultText.textContent = determineWinner();
 }));
 
@@ -62,16 +60,16 @@ function determineWinner() {
 //};
 
 
-const playGame = (choice) => {
-const playerChoice = getPlayerChoice(choice);
-const computerChoice = getComputerChoice();
- document.getElementById(playerchoice);
- console.log("You threw: " + userChoice);
- console.log("The computer threw:" + computerChoice);
- console.log(determineWinner(userChoice, computerChoice));
-document.getElementById('rock');
- document.getElementById('paper');
-document.getElementById('scissors');
+//const playGame = (choice) => {
+  //const playerChoice = getPlayerChoice(choice);
+  //const computerChoice = getComputerChoice();
+  //document.getElementById(playerchoice);
+  //console.log("You threw: " + userChoice);
+  //console.log("The computer threw:" + computerChoice);
+  //console.log(determineWinner(userChoice, computerChoice));
+  //document.getElementById('rock');
+  //document.getElementById('paper');
+  //document.getElementById('scissors');
 //};
 
-playGame();
+
